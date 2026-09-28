@@ -1,0 +1,581 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const PHONE_DISPLAY = '604-499-0766';
+const PHONE_HREF = 'tel:+16044990766';
+const SMS_HREF = 'sms:+16044990766';
+const EMAIL = 'hello@vancouverdeepclean.ca';
+
+const steps = [
+	{
+		title: 'Reach out',
+		desc: "Call or text with your address and what needs doing. Takes two minutes.",
+	},
+	{
+		title: 'Get a real price',
+		desc: "I'll give you an honest quote, usually same day — no games, no hidden add-ons.",
+	},
+	{
+		title: 'I show up and clean',
+		desc: "On time, thorough, and I bring everything I need. You just unlock the door.",
+	},
+];
+
+const included = [
+	{
+		title: 'Kitchen',
+		desc: "Oven, fridge, stove, cabinet fronts, counters — all of it, actually cleaned, not just wiped down.",
+	},
+	{
+		title: 'Bathroom',
+		desc: 'Tile, grout, tub, shower, fixtures. Soap scum and grime don\'t stand a chance.',
+	},
+	{
+		title: 'Baseboards & corners',
+		desc: "The stuff everyone skips. I get down there and actually do it.",
+	},
+	{
+		title: 'Switches, handles, remotes',
+		desc: 'Wiped down and disinfected — all the stuff your hands touch fifty times a day.',
+	},
+	{
+		title: 'Vents, blinds, fans',
+		desc: "All that dust that quietly builds up for months? Gone.",
+	},
+	{
+		title: 'Floors',
+		desc: 'Vacuumed and mopped properly, edge to edge, under furniture where I can get to it.',
+	},
+];
+
+const audience = [
+	"Spring cleaning (or the clean you've been putting off since spring)",
+	"First time hiring a cleaner and not sure what to expect",
+	"That one room you keep avoiding",
+	"Moving out and need it spotless for the landlord",
+	"Company's coming and you're panicking a little",
+];
+
+const benefits = [
+	"I actually care about your place, not just clocking hours",
+	"I notice the stuff other cleans miss",
+	"You'll notice the difference the second you walk in",
+	"Easy to talk to — text me and I'll text back",
+	"Great if you've never had a cleaner before",
+	"Based in North Van, so I'm not driving across the city",
+];
+---
+
+<Layout>
+	<header class="nav">
+		<div class="wrap nav-inner">
+			<span class="brand">Hi, I'm AJ 👋</span>
+			<div class="nav-actions">
+				<a class="phone" href={PHONE_HREF}>{PHONE_DISPLAY}</a>
+				<a class="btn btn-primary btn-small" href={SMS_HREF}>Book Now</a>
+			</div>
+		</div>
+	</header>
+
+	<section class="hero">
+		<div class="wrap hero-inner">
+			<p class="kicker">Now booking in North Vancouver</p>
+			<h1>A proper clean, from someone who'll actually show up and do it right</h1>
+			<p class="sub">
+				I'm AJ — North Van mum of two, doing this full-time now. Text me your
+				address and what needs doing, and I'll get you a straight-up price
+				the same day.
+			</p>
+			<div class="cta-row">
+				<a class="btn btn-primary" href={SMS_HREF}>Text Me for a Quote</a>
+				<a class="btn btn-ghost" href={PHONE_HREF}>Call {PHONE_DISPLAY}</a>
+			</div>
+			<div class="trust-bar">
+				<span>🧴 I bring my own supplies</span>
+				<span>📍 North Van &amp; nearby</span>
+				<span>💬 Usually reply within the hour</span>
+			</div>
+			<p class="price-pill">$45/hr · 2 hour minimum</p>
+		</div>
+	</section>
+
+	<section class="section steps">
+		<div class="wrap">
+			<h2>How booking works</h2>
+			<p class="lede">No accounts, no apps, no back-and-forth. Just this:</p>
+			<div class="grid steps-grid">
+				{
+					steps.map((step, i) => (
+						<div class="card step-card">
+							<span class="step-number">{i + 1}</span>
+							<h3>{step.title}</h3>
+							<p>{step.desc}</p>
+						</div>
+					))
+				}
+			</div>
+		</div>
+	</section>
+
+	<section class="section about">
+		<div class="wrap about-inner">
+			<div class="avatar" aria-hidden="true">AJ</div>
+			<div class="about-copy">
+				<h2>So, a bit about me</h2>
+				<p>
+					Single mum of two, North Van based, and I've been cleaning my whole
+					life — genuinely one of my favourite things to do. I've done around
+					a dozen friends' places by now: move-outs, declutters, "please come
+					save me" situations. This is my first time doing it for people I
+					haven't met yet, but not my first time cleaning.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<section class="section">
+		<div class="wrap">
+			<h2>What's included</h2>
+			<p class="lede">Every clean covers this, no upsells or add-on packages.</p>
+			<div class="grid">
+				{
+					included.map((item) => (
+						<div class="card">
+							<h3>{item.title}</h3>
+							<p>{item.desc}</p>
+						</div>
+					))
+				}
+			</div>
+		</div>
+	</section>
+
+	<section class="section alt">
+		<div class="wrap two-col">
+			<div>
+				<h2>When it's worth calling me</h2>
+				<ul class="check-list">
+					{audience.map((item) => <li>{item}</li>)}
+				</ul>
+			</div>
+			<div>
+				<h2>Why people like working with me</h2>
+				<ul class="check-list">
+					{benefits.map((item) => <li>{item}</li>)}
+				</ul>
+			</div>
+		</div>
+	</section>
+
+	<section class="section cta-band">
+		<div class="wrap cta-band-inner">
+			<div>
+				<h2>Let's get your place done right</h2>
+				<p>
+					I'm just getting started, so my schedule's got room — meaning I can
+					probably fit you in faster than the bigger cleaning companies. Not
+					happy with something? I'll come back and fix it, free.
+				</p>
+			</div>
+			<div class="cta-row">
+				<a class="btn btn-primary" href={SMS_HREF}>Text {PHONE_DISPLAY}</a>
+				<a class="btn btn-ghost-dark" href={PHONE_HREF}>Call Instead</a>
+			</div>
+		</div>
+	</section>
+
+	<footer class="footer">
+		<div class="wrap">
+			<p>&copy; {new Date().getFullYear()} AJ's Deep Clean — North Vancouver, BC.</p>
+			<p class="footer-contact">{PHONE_DISPLAY} · <a href={`mailto:${EMAIL}`}>{EMAIL}</a></p>
+		</div>
+	</footer>
+
+	<div class="sticky-cta" role="complementary" aria-label="Quick booking actions">
+		<a class="btn btn-primary" href={SMS_HREF}>Text for a Quote</a>
+		<a class="btn btn-ghost-dark" href={PHONE_HREF}>Call</a>
+	</div>
+</Layout>
+
+<style>
+	.wrap {
+		max-width: 1080px;
+		margin: 0 auto;
+		padding: 0 1.5rem;
+	}
+
+	.nav {
+		border-bottom: 1px solid var(--border);
+	}
+
+	.nav-inner {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 1rem 1.5rem;
+	}
+
+	.nav-actions {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+	}
+
+	.brand {
+		font-family: 'Poppins', sans-serif;
+		font-weight: 700;
+		font-size: 1.15rem;
+		color: var(--brand-dark);
+	}
+
+	.phone {
+		font-weight: 600;
+		text-decoration: none;
+		color: var(--brand-dark);
+	}
+
+	.btn-small {
+		padding: 0.5rem 1.1rem;
+		font-size: 0.9rem;
+	}
+
+	.hero {
+		background: linear-gradient(160deg, var(--brand) 0%, var(--brand-dark) 100%);
+		color: #fff;
+		padding: 4.5rem 0 4rem;
+	}
+
+	.hero-inner {
+		text-align: center;
+	}
+
+	.kicker {
+		display: inline-block;
+		margin: 0 0 1rem;
+		text-transform: uppercase;
+		letter-spacing: 0.06em;
+		font-size: 0.8rem;
+		font-weight: 700;
+		color: var(--accent);
+	}
+
+	.hero h1 {
+		font-size: clamp(2.1rem, 4.4vw, 3rem);
+		font-weight: 800;
+		max-width: 780px;
+		margin: 0 auto;
+	}
+
+	.hero .sub {
+		max-width: 600px;
+		margin: 1.1rem auto 0;
+		font-size: 1.1rem;
+		color: rgba(255, 255, 255, 0.9);
+	}
+
+	.trust-bar {
+		display: flex;
+		gap: 1.5rem;
+		justify-content: center;
+		flex-wrap: wrap;
+		margin-top: 2rem;
+		font-size: 0.9rem;
+		color: rgba(255, 255, 255, 0.85);
+	}
+
+	.price-pill {
+		display: inline-block;
+		margin: 1.25rem auto 0;
+		background: rgba(255, 255, 255, 0.12);
+		border: 1px solid rgba(255, 255, 255, 0.35);
+		border-radius: 999px;
+		padding: 0.6rem 1.4rem;
+		font-size: 0.95rem;
+	}
+
+	.cta-row {
+		display: flex;
+		gap: 0.85rem;
+		justify-content: center;
+		flex-wrap: wrap;
+		margin-top: 1.75rem;
+	}
+
+	.btn {
+		display: inline-block;
+		padding: 0.8rem 1.6rem;
+		border-radius: 8px;
+		font-weight: 600;
+		text-decoration: none;
+		font-size: 0.98rem;
+		transition: transform 0.15s ease;
+	}
+
+	.btn:hover {
+		transform: translateY(-1px);
+	}
+
+	.btn-primary {
+		background: var(--accent);
+		color: #21150a;
+	}
+
+	.btn-ghost {
+		background: transparent;
+		color: #fff;
+		border: 1.5px solid rgba(255, 255, 255, 0.6);
+	}
+
+	.btn-ghost-dark {
+		background: transparent;
+		color: var(--brand-dark);
+		border: 1.5px solid var(--brand-dark);
+	}
+
+	.section {
+		padding: 4rem 0;
+	}
+
+	.section.alt {
+		background: var(--bg-soft);
+	}
+
+	.section h2 {
+		font-size: clamp(1.6rem, 3vw, 2.1rem);
+		text-align: center;
+	}
+
+	.lede {
+		text-align: center;
+		color: var(--ink-soft);
+		max-width: 560px;
+		margin: 0.75rem auto 0;
+	}
+
+	.about-inner {
+		display: flex;
+		align-items: center;
+		gap: 2.5rem;
+	}
+
+	.avatar {
+		flex: 0 0 auto;
+		width: 120px;
+		height: 120px;
+		border-radius: 50%;
+		background: linear-gradient(160deg, var(--accent) 0%, #d98325 100%);
+		color: #fff;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-family: 'Poppins', sans-serif;
+		font-weight: 800;
+		font-size: 2.2rem;
+		box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+	}
+
+	.about-copy h2 {
+		text-align: left;
+		margin-bottom: 1rem;
+	}
+
+	.about-copy p {
+		color: var(--ink-soft);
+		margin: 0 0 1rem;
+	}
+
+	.about-copy p:last-child {
+		margin-bottom: 0;
+	}
+
+	.grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+		gap: 1.25rem;
+		margin-top: 2.5rem;
+	}
+
+	.card {
+		background: #fff;
+		border: 1px solid var(--border);
+		border-radius: 12px;
+		padding: 1.5rem;
+	}
+
+	.card h3 {
+		font-size: 1.05rem;
+		color: var(--brand-dark);
+		margin-bottom: 0.5rem;
+	}
+
+	.card p {
+		margin: 0;
+		color: var(--ink-soft);
+		font-size: 0.95rem;
+	}
+
+	.steps-grid {
+		grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+	}
+
+	.step-card {
+		position: relative;
+		padding-top: 2.75rem;
+	}
+
+	.step-number {
+		position: absolute;
+		top: -14px;
+		left: 1.5rem;
+		width: 32px;
+		height: 32px;
+		border-radius: 50%;
+		background: var(--brand);
+		color: #fff;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-family: 'Poppins', sans-serif;
+		font-weight: 700;
+		font-size: 0.95rem;
+	}
+
+	.two-col {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 3rem;
+	}
+
+	.two-col h2 {
+		text-align: left;
+		margin-bottom: 1.25rem;
+	}
+
+	.check-list {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		display: flex;
+		flex-direction: column;
+		gap: 0.75rem;
+	}
+
+	.check-list li {
+		position: relative;
+		padding-left: 1.6rem;
+		color: var(--ink-soft);
+	}
+
+	.check-list li::before {
+		content: '✓';
+		position: absolute;
+		left: 0;
+		color: var(--brand);
+		font-weight: 700;
+	}
+
+	.cta-band {
+		background: var(--brand-dark);
+		color: #fff;
+	}
+
+	.cta-band-inner {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		gap: 1.5rem;
+	}
+
+	.cta-band h2 {
+		text-align: left;
+		color: #fff;
+	}
+
+	.cta-band p {
+		color: rgba(255, 255, 255, 0.85);
+		margin: 0.35rem 0 0;
+	}
+
+	.cta-band .cta-row {
+		margin-top: 0;
+	}
+
+	.footer {
+		padding: 2rem 0 5.5rem;
+		text-align: center;
+		color: var(--ink-soft);
+		font-size: 0.9rem;
+	}
+
+	.footer-contact {
+		margin-top: 0.4rem;
+	}
+
+	.footer-contact a {
+		text-decoration: underline;
+	}
+
+	.sticky-cta {
+		display: none;
+	}
+
+	@media (max-width: 720px) {
+		.two-col {
+			grid-template-columns: 1fr;
+		}
+
+		.about-inner {
+			flex-direction: column;
+			text-align: center;
+		}
+
+		.about-copy h2 {
+			text-align: center;
+		}
+
+		.cta-band-inner {
+			flex-direction: column;
+			text-align: center;
+		}
+
+		.cta-band h2,
+		.cta-band p {
+			text-align: center;
+		}
+
+		.trust-bar {
+			gap: 0.75rem 1.25rem;
+			font-size: 0.85rem;
+		}
+
+		.nav-actions .phone {
+			display: none;
+		}
+
+		.footer {
+			padding-bottom: 6.5rem;
+		}
+
+		.sticky-cta {
+			display: flex;
+			position: fixed;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			gap: 0.6rem;
+			padding: 0.75rem 1rem calc(0.75rem + env(safe-area-inset-bottom));
+			background: #fff;
+			border-top: 1px solid var(--border);
+			box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.08);
+			z-index: 40;
+		}
+
+		.sticky-cta .btn {
+			flex: 1;
+			text-align: center;
+			padding: 0.7rem 0.5rem;
+			font-size: 0.9rem;
+		}
+	}
+</style>

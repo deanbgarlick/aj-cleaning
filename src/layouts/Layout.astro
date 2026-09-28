@@ -1,0 +1,88 @@
+---
+interface Props {
+	title?: string;
+	description?: string;
+}
+
+const {
+	title = 'Vancouver Deep Clean | Deep Cleaning Services',
+	description = 'Professional deep cleaning for homes and offices in Metro Vancouver. Kitchens, bathrooms, baseboards, and buildup — done right.',
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<link
+			rel="preconnect"
+			href="https://fonts.googleapis.com"
+		/>
+		<link
+			rel="preconnect"
+			href="https://fonts.gstatic.com"
+			crossorigin
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+
+<style is:global>
+	:root {
+		--brand: #0e6e5b;
+		--brand-dark: #0a5346;
+		--brand-light: #e6f4f1;
+		--accent: #f2a541;
+		--ink: #16221f;
+		--ink-soft: #4b5a56;
+		--bg: #ffffff;
+		--bg-soft: #f7faf9;
+		--border: #e1e9e6;
+	}
+
+	* {
+		box-sizing: border-box;
+	}
+
+	html,
+	body {
+		margin: 0;
+		padding: 0;
+		width: 100%;
+	}
+
+	body {
+		font-family: 'Inter', system-ui, sans-serif;
+		color: var(--ink);
+		background: var(--bg);
+		line-height: 1.55;
+	}
+
+	h1,
+	h2,
+	h3 {
+		font-family: 'Poppins', 'Inter', system-ui, sans-serif;
+		line-height: 1.2;
+		margin: 0;
+	}
+
+	img {
+		max-width: 100%;
+	}
+
+	a {
+		color: inherit;
+	}
+</style>
